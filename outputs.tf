@@ -13,3 +13,9 @@ output "security_group_name" {
   value = aws_security_group.public_ssh.name
 
 }
+
+output "hardcoded_password_exposed" {
+  value       = aws_ssm_parameter.hardcoded_password.value
+  description = "Intentionally exposed password output for testing"
+  sensitive   = false
+}
